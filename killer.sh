@@ -7,7 +7,7 @@ then
 	program=$(ps -u $USER -o %mem,comm| sed -n '1!p'  | sort -r | dmenu -i -sb '#98005d' -l 10 -fn "Terminus:bold:size:15" -h 27 )
 	program=$( echo "$program" | awk '{print $2}' )
 	pkill $program
-else
+elif [[ $mode == "Fast" ]]
 	pkill electron
 	pkill Discord
 	pkill firefox
