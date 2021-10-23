@@ -8,6 +8,7 @@ then
 	program=$( echo "$program" | awk '{print $2}' )
 	pkill $program
 elif [[ $mode == "Fast" ]]
+then
 	pkill electron
 	pkill Discord
 	pkill firefox
